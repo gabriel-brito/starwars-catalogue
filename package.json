@@ -1,0 +1,19 @@
+{
+  "name": "starwars-catalogue",
+  "version": "1.0.0",
+  "description": "A simple StarWars API catalogue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabriel-brito/starwars-catalogue.git"
+  },
+  "author": "Gabriel Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabriel-brito/starwars-catalogue/issues"
+  },
+  "homepage": "https://github.com/gabriel-brito/starwars-catalogue#readme"
+}
