@@ -109,7 +109,11 @@ body {
   height: 80px;
   margin: 1% auto;
   color: white;
+  border: 1px solid transparent;
   background-color: #2719C7;
-  border-radius: 40px; }
+  border-radius: 40px;
+  transition: .8s linear; }
+  .catalogue-box__search-box button:hover {
+    background-color: #CE0C2C; }
 
 /*# sourceMappingURL=style.css.map */

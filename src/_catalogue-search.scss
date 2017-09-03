@@ -12,6 +12,12 @@
     height: 80px;
     margin: 1% auto;
     color: white;
+    border:1px solid transparent;
 	background-color: $blueLightSaberColor;
 	border-radius: 40px;
+	transition: .8s linear;
+
+	&:hover{
+		background-color:$redLightSaberColor;
+	}
 }
