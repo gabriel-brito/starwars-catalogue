@@ -56,11 +56,18 @@ body {
 
 h1 {
   font-size: 7em;
+  text-transform: uppercase;
   color: #FFD700;
   text-align: center;
   margin: 30px auto; }
 
 body {
   background-image: url("./images/background.jpg"); }
+
+.catalogue-box {
+  width: 90%;
+  margin: 1rem 5%;
+  height: 80vh;
+  background-color: rgba(255, 255, 255, 0.7); }
 
 /*# sourceMappingURL=style.css.map */
