@@ -1,0 +1,13 @@
+@font-face {
+	font-family: Starjedi;
+	src: url('./font/Starjedi.ttf');
+}
+body{
+	font-family:'starjedi';
+}
+h1{
+	font-size:7em;
+	color:$yellowFontColor;
+	text-align:center;
+	margin:30px auto;
+}
