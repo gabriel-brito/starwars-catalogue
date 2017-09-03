@@ -61,6 +61,20 @@ h1 {
   text-align: center;
   margin: 30px auto; }
 
+.catalogue-box h2 {
+  margin: 1rem auto;
+  text-align: center;
+  font-size: 3em; }
+
+.catalogue-box__filter > select {
+  font-size: 1em; }
+
+.catalogue-box__search-box input {
+  font-size: 3em; }
+
+.catalogue-box__search-box button {
+  font-size: 3em; }
+
 body {
   background-image: url("./images/background.jpg"); }
 
@@ -68,6 +82,34 @@ body {
   width: 90%;
   margin: 1rem 5%;
   height: 80vh;
-  background-color: rgba(255, 255, 255, 0.7); }
+  min-height: 80vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: fixed; }
+
+.catalogue-box__filter {
+  width: 90%;
+  height: 140px;
+  margin: 2rem 5%; }
+
+.catalogue-box__filter > select {
+  width: 100%;
+  height: 100px; }
+
+.catalogue-box__search-box {
+  margin: 4rem auto;
+  width: 90%; }
+
+.catalogue-box__search-box input {
+  width: 100%;
+  margin: 0 auto;
+  height: 100px; }
+
+.catalogue-box__search-box button {
+  width: 100%;
+  height: 80px;
+  margin: 1% auto;
+  color: white;
+  background-color: #2719C7;
+  border-radius: 40px; }
 
 /*# sourceMappingURL=style.css.map */

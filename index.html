@@ -9,7 +9,25 @@
 	<h1>star wars</h1>
 
 	<article class="catalogue-box">
-		
+		<div class="catalogue-box__filter">
+			<h2>Select your filter below:</h2>
+			<select name="cat">
+				<option disabled selected></option>
+				<option value="name">Name</option>
+				<option value="plantet">Planet</option>
+				<option value="gender">Gender</option>
+				<option value="birth">Birth Year</option>				
+			</select>
+		</div>
+
+		<div class="catalogue-box__search-box">
+			<h2>Please, type your search:</h2>
+			<form>
+				<input type="text" placeholder="search" name="search">
+			</form>
+			<button>Go!</button>
+		</div>
+	
 	</article>
 	</body>
 </html>
