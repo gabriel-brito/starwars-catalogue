@@ -1,4 +1,4 @@
-const url = 'https://swapi.co/api/people/1';
+const url = 'https://swapi.co/api/people/';
 let p = document.querySelector('p');
 myButton.onclick = ()=>{
 	fetch(url)
