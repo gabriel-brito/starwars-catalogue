@@ -1,0 +1,17 @@
+.catalogue-box__catalogue{
+	width:90%;
+	margin: 5%;
+	display:inline-block;
+}
+
+.catalogue-item{
+	width: 46%;
+    margin: 2%;
+    border: 2px solid black;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    float: left;
+    justify-content: center;
+    font-size: 2em;
+}

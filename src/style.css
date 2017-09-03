@@ -81,10 +81,9 @@ body {
 .catalogue-box {
   width: 90%;
   margin: 1rem 5%;
-  height: 80vh;
-  min-height: 80vh;
+  min-height: 800px;
   background-color: rgba(255, 255, 255, 0.7);
-  position: fixed; }
+  position: absolute; }
 
 .catalogue-box__filter {
   width: 90%;
@@ -107,13 +106,32 @@ body {
 .catalogue-box__search-box button {
   width: 100%;
   height: 80px;
-  margin: 1% auto;
+  margin: 3% auto;
   color: white;
   border: 1px solid transparent;
   background-color: #2719C7;
   border-radius: 40px;
-  transition: .8s linear; }
+  transition: .8s linear;
+  text-transform: uppercase;
+  font-weight: 600; }
   .catalogue-box__search-box button:hover {
-    background-color: #CE0C2C; }
+    background-color: #CE0C2C;
+    cursor: pointer; }
+
+.catalogue-box__catalogue {
+  width: 90%;
+  margin: 5%;
+  display: inline-block; }
+
+.catalogue-item {
+  width: 46%;
+  margin: 2%;
+  border: 2px solid black;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  float: left;
+  justify-content: center;
+  font-size: 2em; }
 
 /*# sourceMappingURL=style.css.map */

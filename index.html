@@ -9,7 +9,7 @@
 	<h1>star wars</h1>
 
 	<article class="catalogue-box">
-		<div class="catalogue-box__filter">
+		<section class="catalogue-box__filter">
 			<h2>Select your filter below:</h2>
 			<select name="cat">
 				<option disabled selected></option>
@@ -18,18 +18,31 @@
 				<option value="gender">Gender</option>
 				<option value="birth">Birth Year</option>				
 			</select>
-		</div>
+		</section>
 
-		<div class="catalogue-box__search-box">
+		<section class="catalogue-box__search-box">
 			<h2>Please, type your search:</h2>
 			<form>
 				<input type="text" placeholder="search" name="search">
 			</form>
-			<button id="myButton">Go!</button>
-		</div>
+			<button id="myButton">Go, Jedi !</button>
+		</section>
 	
+		<h2>Characters:</h2>
+
+		<section class="catalogue-box__catalogue">
+			<div class="catalogue-item">
+				<p>Lorem Ipsum</p>
+			</div>
+			<div class="catalogue-item">
+				<p>Lorem Ipsum</p>
+			</div>
+		</section>
+
+
 	</article>
 	
 	<script type="text/javascript" src="./src/js/sounds.js"></script>
+	<script type="text/javascript" src="./src/js/app.js"></script>
 	</body>
 </html>
