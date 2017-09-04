@@ -1,14 +1,11 @@
 const url = 'https://swapi.co/api/people/';
 let p = document.querySelector('p');
+let example;
 myButton.onclick = ()=>{
 	fetch(url)
 		.then(data => data.json())
-		.then((data,err) => {
-			let name = data;
-			if(name){
-				p.innerText = data.name;
-			} else {
-				console.log('something is wrong.');
-			}
-		})
+		.then(data=> {
+			example = data.results.map(item=> item.name);
+			console.log(example);
+		});		
 }
