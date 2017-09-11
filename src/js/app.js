@@ -29,6 +29,8 @@ const renderPersonDetails = (keyMapElement, searchResultsContainer) => {
 			e.preventDefault();
 			let path = this.href;
 			let planet = null;
+			let planetResidents = null;
+			let renderPlanetResidents = null;
 			fetch(path)
 				.then(data => data.json())
 				.then(data => {
@@ -36,15 +38,26 @@ const renderPersonDetails = (keyMapElement, searchResultsContainer) => {
 						fetch(homeworld)
 							.then(data => data.json())
 							.then(data=> {
+								 planetResidents = data.residents;
 								 planet = data.name;
+								 for(var key in planetResidents) {
+								    if(planetResidents.hasOwnProperty(key)) {
+								        console.log(planetResidents[key]);
+								        fetch(planetResidents[key])
+								        	.then(data => data.json())
+								        	.then(data=> {
+								        		console.log(data.name);
+								        	});
+								    }
+								}
 								 searchResultsContainer.innerHTML = 
 			 						`<tr class="search-result___content-item">
 											<td class="search-result">
-												<h2>${name}</h2>
+												<p>Name: ${name}</p>
 												<p>Birth Year: ${birth_year}</p>
 												<p>Gender: ${gender}</p>
 												<p>Planet: ${planet}</p>
-												<p>cuzões: </p>
+												<p>${planet} Residents: </p>
 											</td>
 										</tr>`;
 							});
