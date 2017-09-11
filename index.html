@@ -6,12 +6,27 @@
 		<link rel="stylesheet" type="text/css" href="./src/style.css">
 	</head>
 	<body>
-	<h1>star wars</h1>
+	<header>
+		<h1>star wars</h1>
+	</header>
 
 	<article class="catalogue-box">
-		<section class="catalogue-box__filter">
+
+		<section class="search-engine p-spacing-top-bottom-20">
+			<h2>Please, type your search:</h2>
+			<form class="search-engine__form">
+				<input  class="search-engine__input" 
+						type="text"
+						placeholder="search"
+						name="search">
+			</form>
+			<button class="search-button"
+					id="searchButton">Go, Jedi !</button>		
+		</section>
+
+		<section class="catalogue-box__filter p-spacing-top-bottom-20">
 			<h2>Select your filter below:</h2>
-			<select name="cat">
+			<select name="category">
 				<option disabled selected></option>
 				<option value="name">Name</option>
 				<option value="plantet">Planet</option>
@@ -19,30 +34,16 @@
 				<option value="birth">Birth Year</option>				
 			</select>
 		</section>
-
-		<section class="catalogue-box__search-box">
-			<h2>Please, type your search:</h2>
-			<form>
-				<input type="text" placeholder="search" name="search">
-			</form>
-			<button id="myButton">Go, Jedi !</button>
-		</section>
 	
-		<h2>Characters:</h2>
-
-		<section class="catalogue-box__catalogue">
-			<div class="catalogue-item">
-				<p>Lorem Ipsum</p>
-			</div>
-			<div class="catalogue-item">
-				<p>Lorem Ipsum</p>
+		<section class="search-results p-spacing-top-bottom-20">
+			<h2>Characters:</h2>
+			<div id="searchResults">
+				<table class="search-result___content">
+					<tbody id="itemlist"></tbody>
+				</table>
 			</div>
 		</section>
-
-
 	</article>
-	
-	<script type="text/javascript" src="./src/js/sounds.js"></script>
 	<script type="text/javascript" src="./src/js/app.js"></script>
 	</body>
 </html>

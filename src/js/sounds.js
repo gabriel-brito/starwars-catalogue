@@ -1,5 +1,3 @@
-const myButton = document.querySelector('#myButton');
-
 myButton.addEventListener('mouseover', ()=>{
 	let audio = new Audio();
 	audio.src = '../src/js/sounds/open.mp4';

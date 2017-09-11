@@ -2,9 +2,11 @@
 	font-family: Starjedi;
 	src: url('./font/Starjedi.ttf');
 }
-body{
+html, body {
 	font-family:'starjedi';
+	font-size: 16px;
 }
+
 h1{
 	font-size:7em;
 	text-transform: uppercase;
@@ -12,17 +14,13 @@ h1{
 	text-align:center;
 	margin:30px auto;
 }
-.catalogue-box h2{
+
+h2 {
+	font-size: 3em;
 	margin:1rem auto;
 	text-align:center;
-	font-size:3em;
 }
+
 .catalogue-box__filter>select{
 	font-size:1em;
-}
-.catalogue-box__search-box input{
-	font-size:3em;
-}
-.catalogue-box__search-box button{
-    font-size: 3em;
 }
