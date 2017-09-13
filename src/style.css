@@ -132,6 +132,14 @@ body {
   width: 100%;
   display: inline-block; }
 
+.search-result__residents-table {
+  width: 100%;
+  margin: 10px 0; }
+
+.search-result__person-name {
+  color: black;
+  padding: 2px 0; }
+
 .catalogue-box__catalogue {
   display: inline-block; }
 

@@ -9,7 +9,7 @@ let planetResidents = null;
 const renderPersonsTable = (container, data) => {
 	container.innerHTML = data.map((item, counter) => 
 		`<tr class="search-result___content-item">
-			<td class="search-result"><a href="${data[counter].url}">${data[counter].name}</a></td>
+			<td class="search-result"><a class="search-result__person-name" href="${data[counter].url}">${data[counter].name}</a></td>
 		</tr>`).join('');
 }
 
@@ -44,7 +44,7 @@ const renderResidents = (container ,planetResidents) => {
 	        		console.log(data.url);
 				container.innerHTML += 
 				`<tr class="search-result___content-item">
-					<td class="search-result"><a href="${data.url}">${data.name}</a></td>
+					<td class="search-result"><a class="search-result__person-name" href="${data.url}">${data.name}</a></td>
 				</tr>`;
 				renderPersonDetails(".search-result a", searchResultsTable);
 	        	});
@@ -74,11 +74,11 @@ const renderPersonDetails = (keyMapElement, searchResultsContainer) => {
 									<p>Gender: ${gender}</p>
 									<p>Planet: ${planet}</p>
 									<p>${planet} Residents: </p>
-									<table id="kappapride">
+									<table id="renderResidentsTable" class="search-result__residents-table">
 									</table>
 								</td>
 							</tr>`;
-							let kek = document.querySelector('#kappapride');
+							let kek = document.querySelector('#renderResidentsTable');
 							renderResidents(kek, planetResidents);
 					}, 2000);		
 				});
