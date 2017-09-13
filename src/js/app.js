@@ -2,7 +2,6 @@ const url = 'https://swapi.co/api/people/';
 const searchButton = document.querySelector("#searchButton");
 const searchResultsTable = document.querySelector("#itemlist");
 const resultsResults = document.querySelector("#searchResults");
-const kek = document.querySelector('#testing');
 let data = null;
 let planet = null;
 let planetResidents = null;
@@ -33,7 +32,7 @@ const fetchPlanetResidents = (homeworld) => {
 		});
 }
 
-const renderResidents = (planetResidents) => {
+const renderResidents = (container ,planetResidents) => {
 	for(var key in planetResidents) {
 	    if(planetResidents.hasOwnProperty(key)) {
 	        console.log(planetResidents[key]);
@@ -43,13 +42,15 @@ const renderResidents = (planetResidents) => {
 	        	.then(data=> {
 	        		console.log(data.name);
 	        		console.log(data.url);
-				//kek.innerHTML = 
-				//`<tr class="search-result___content-item">
-				//	<td class="search-result"><a href="${planetResidents[key].url}">${planetResidents[key].name}</a></td>
-				//</tr>`;
+				container.innerHTML += 
+				`<tr class="search-result___content-item">
+					<td class="search-result"><a href="${data.url}">${data.name}</a></td>
+				</tr>`;
+				renderPersonDetails(".search-result a", searchResultsTable);
 	        	});
 	    }
 	}
+
 }
 
 const renderPersonDetails = (keyMapElement, searchResultsContainer) => {
@@ -76,7 +77,9 @@ const renderPersonDetails = (keyMapElement, searchResultsContainer) => {
 									<table id="kappapride">
 									</table>
 								</td>
-							</tr>`;	
+							</tr>`;
+							let kek = document.querySelector('#kappapride');
+							renderResidents(kek, planetResidents);
 					}, 2000);		
 				});
 		}
