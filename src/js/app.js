@@ -2,7 +2,7 @@ const url = 'https://swapi.co/api/people/';
 const searchButton = document.querySelector("#searchButton");
 const searchResultsTable = document.querySelector("#itemlist");
 const resultsResults = document.querySelector("#searchResults");
-const kek = document.querySelector('#kappapride');
+const kek = document.querySelector('#testing');
 let data = null;
 let planet = null;
 let planetResidents = null;
@@ -22,7 +22,6 @@ const fetchPerson = (url) => {
 			const result = data.results;
 			renderPersonsTable(searchResultsTable, result);
 			renderPersonDetails(".search-result a", searchResultsTable);
-			renderResidents(planetResidents);
 		});
 }
 const fetchPlanetResidents = (homeworld) => {
@@ -38,14 +37,16 @@ const renderResidents = (planetResidents) => {
 	for(var key in planetResidents) {
 	    if(planetResidents.hasOwnProperty(key)) {
 	        console.log(planetResidents[key]);
-	        fetch(planetResidents[key])
+	        let eachResident = planetResidents[key];
+	        fetch(eachResident)
 	        	.then(data => data.json())
 	        	.then(data=> {
+	        		console.log(data.name);
+	        		console.log(data.url);
 				//kek.innerHTML = 
-			//	`<tr class="search-result___content-item">
-			//		<td class="search-result"><a href="${planetResidents[key].url}">${planetResidents[key].name}</a></td>
-			//	</tr>`;
-	        	console.log(planetResidents[key].name);
+				//`<tr class="search-result___content-item">
+				//	<td class="search-result"><a href="${planetResidents[key].url}">${planetResidents[key].name}</a></td>
+				//</tr>`;
 	        	});
 	    }
 	}
