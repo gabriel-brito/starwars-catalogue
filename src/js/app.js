@@ -2,9 +2,34 @@ const url = 'https://swapi.co/api/people/';
 const searchButton = document.querySelector("#searchButton");
 const searchResultsTable = document.querySelector("#itemlist");
 const resultsResults = document.querySelector("#searchResults");
+const searchInput = document.querySelector('#search-input');
+
+
 let data = null;
 let planet = null;
 let planetResidents = null;
+
+const searchFilter = ()=>{
+	let filter = searchInput.value.toUpperCase();
+	let row = searchResultsTable.getElementsByTagName('tr');
+	let i = null;
+	let a = null;
+
+	 for (i = 0; i < row.length; i++) {
+        a = row[i].querySelector(".search-result__person-name")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            row[i].style.display = "";
+        } else {
+            row[i].style.display = "none";
+        }
+    } 
+}
+searchInput.onclick = (e)=>{
+	e.preventDefault();
+	if(searchInput.value)
+		searchFilter();	
+}
+
 
 const renderPersonsTable = (container, data) => {
 	container.innerHTML += data.map((item, counter) => 
@@ -97,6 +122,22 @@ searchButton.addEventListener('click', (e) => {
   cleaningPersonResult(searchResultsTable);
   fetchPerson(url);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 searchButton.addEventListener('mouseover', ()=>{
 	let audio = new Audio();
