@@ -11,25 +11,17 @@ let planetResidents = null;
 
 const searchFilter = ()=>{
 	let filter = searchInput.value.toUpperCase();
-	let row = searchResultsTable.getElementsByTagName('tr');
-	let i = null;
-	let a = null;
+	let row = Array.from(searchResultsTable.querySelectorAll('tr td'));
+	console.log(row);
+	console.log(filter);
 
-	 for (i = 0; i < row.length; i++) {
-        a = row[i].querySelector(".search-result__person-name")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            row[i].style.display = "";
-        } else {
-            row[i].style.display = "none";
-        }
-    } 
+	row.map(item => {
+		console.log(item);
+		item.textContent.toUpperCase().indexOf(filter) === -1 ? 
+		item.style.display = "none"
+		: item.style.display = ""
+	});
 }
-searchInput.onclick = (e)=>{
-	e.preventDefault();
-	if(searchInput.value)
-		searchFilter();	
-}
-
 
 const renderPersonsTable = (container, data) => {
 	container.innerHTML += data.map((item, counter) => 
@@ -119,23 +111,13 @@ const cleaningPersonResult = (container)=>{
 
 window.onload = fetchPerson(url);
 searchButton.addEventListener('click', (e) => {
-  cleaningPersonResult(searchResultsTable);
-  fetchPerson(url);
+  if(searchInput.value){
+  	searchFilter();
+  } else {
+  	cleaningPersonResult(searchResultsTable);
+  	fetchPerson(url);
+  }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
