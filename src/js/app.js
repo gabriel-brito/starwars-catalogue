@@ -7,7 +7,7 @@ let planet = null;
 let planetResidents = null;
 
 const renderPersonsTable = (container, data) => {
-	container.innerHTML = data.map((item, counter) => 
+	container.innerHTML += data.map((item, counter) => 
 		`<tr class="search-result___content-item">
 			<td class="search-result"><a class="search-result__person-name" href="${data[counter].url}">${data[counter].name}</a></td>
 		</tr>`).join('');
@@ -17,7 +17,6 @@ const fetchPerson = (url) => {
 	fetch(url)
 		.then(data => data.json())
 		.then(data=> {
-			searchResultsTable.innerHTML = "";
 			let result = data.results;
 			renderPersonsTable(searchResultsTable, result);
 			renderPersonDetails(".search-result a", searchResultsTable);
@@ -88,9 +87,14 @@ const renderPersonDetails = (keyMapElement, searchResultsContainer) => {
 	}
 }
 
+const cleaningPersonResult = (container)=>{
+	container.innerHTML = "";	
+}
+
 
 window.onload = fetchPerson(url);
 searchButton.addEventListener('click', (e) => {
+  cleaningPersonResult(searchResultsTable);
   fetchPerson(url);
 });
 
