@@ -3,6 +3,7 @@ const searchButton = document.querySelector("#searchButton");
 const searchResultsTable = document.querySelector("#itemlist");
 const resultsResults = document.querySelector("#searchResults");
 const searchInput = document.querySelector('#search-input');
+const filterOption = document.querySelector('#search-filter');
 
 
 let data = null;
@@ -108,8 +109,8 @@ const cleaningPersonResult = (container)=>{
 	container.innerHTML = "";	
 }
 
+window.onload =	fetchPerson(url);
 
-window.onload = fetchPerson(url);
 searchButton.addEventListener('click', (e) => {
   if(searchInput.value){
   	searchFilter();
