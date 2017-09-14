@@ -18,9 +18,11 @@ const fetchPerson = (url) => {
 		.then(data => data.json())
 		.then(data=> {
 			searchResultsTable.innerHTML = "";
-			const result = data.results;
+			let result = data.results;
 			renderPersonsTable(searchResultsTable, result);
 			renderPersonDetails(".search-result a", searchResultsTable);
+				if (data.next)
+					fetchPerson(data.next);
 		});
 }
 const fetchPlanetResidents = (homeworld) => {
