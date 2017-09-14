@@ -36,6 +36,9 @@ const fetchPerson = (url) => {
 		.then(data => data.json())
 		.then(data=> {
 			let result = data.results;
+			result.forEach((item)=>{
+				filterOption.innerHTML += `<option>${item.homeworld}</option>`
+			})
 			renderPersonsTable(searchResultsTable, result);
 			renderPersonDetails(".search-result a", searchResultsTable);
 				if (data.next)
