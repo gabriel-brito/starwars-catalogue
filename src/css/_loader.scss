@@ -1,0 +1,21 @@
+.loader{
+  height:200px;
+  width:200px;
+  margin:9rem auto;
+  border-top:20px solid #FFD700;
+  border-right:20px solid #FFD700;
+  border-bottom:20px solid #FFD700;
+  border-left:25px solid transparent;
+  border-radius:100%;
+  -webkit-animation:spin 3s linear infinite;
+  animation:spin 3s linear infinite;
+}
+@keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

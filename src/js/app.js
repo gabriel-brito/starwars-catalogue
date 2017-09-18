@@ -1,21 +1,30 @@
+const mainPage = document.querySelector('#main-page');
+const loader = document.querySelector('.loader');
+
 const url = 'https://swapi.co/api/people/';
+const title = document.querySelector('h1');
 const searchButton = document.querySelector("#searchButton");
 const searchResultsTable = document.querySelector("#itemlist");
 const resultsResults = document.querySelector("#searchResults");
 const searchInput = document.querySelector('#search-input');
-const filterOption = document.querySelector('#search-filter');
 
 
 let data = null;
 let planet = null;
 let planetResidents = null;
 
+const pageLoaded = ()=>{
+	mainPage.style.display = 'block';
+	loader.style.display = 'none';
+}
+
+const cleaningPersonResult = (container)=>{
+	container.innerHTML = "";	
+}
+
 const searchFilter = ()=>{
 	let filter = searchInput.value.toUpperCase();
 	let row = Array.from(searchResultsTable.querySelectorAll('tr td'));
-	console.log(row);
-	console.log(filter);
-
 	row.map(item => {
 		console.log(item);
 		item.textContent.toUpperCase().indexOf(filter) === -1 ? 
@@ -27,7 +36,11 @@ const searchFilter = ()=>{
 const renderPersonsTable = (container, data) => {
 	container.innerHTML += data.map((item, counter) => 
 		`<tr class="search-result___content-item">
-			<td class="search-result"><a class="search-result__person-name" href="${data[counter].url}">${data[counter].name}</a></td>
+			<td class="search-result">
+				<a class="search-result__person-name" href="${data[counter].url}">
+					${data[counter].name}
+				</a>
+			</td>
 		</tr>`).join('');
 }
 
@@ -36,9 +49,6 @@ const fetchPerson = (url) => {
 		.then(data => data.json())
 		.then(data=> {
 			let result = data.results;
-			result.forEach((item)=>{
-				filterOption.innerHTML += `<option>${item.homeworld}</option>`
-			})
 			renderPersonsTable(searchResultsTable, result);
 			renderPersonDetails(".search-result a", searchResultsTable);
 				if (data.next)
@@ -54,7 +64,7 @@ const fetchPlanetResidents = (homeworld) => {
 		});
 }
 
-const renderResidents = (container ,planetResidents) => {
+const renderResidents = (container, planetResidents) => {
 	for(var key in planetResidents) {
 	    if(planetResidents.hasOwnProperty(key)) {
 	        console.log(planetResidents[key]);
@@ -108,11 +118,7 @@ const renderPersonDetails = (keyMapElement, searchResultsContainer) => {
 	}
 }
 
-const cleaningPersonResult = (container)=>{
-	container.innerHTML = "";	
-}
 
-window.onload =	fetchPerson(url);
 
 searchButton.addEventListener('click', (e) => {
   if(searchInput.value){
@@ -123,22 +129,10 @@ searchButton.addEventListener('click', (e) => {
   }
 });
 
-
-
-searchButton.addEventListener('mouseover', ()=>{
-	let audio = new Audio();
-	audio.src = '../src/js/sounds/open.mp4';
-	audio.play();
+window.onload =	()=>{
+	fetchPerson(url);
+	mainPage.style.display = 'none';
 	setTimeout(() => {
-	  searchButton.innerText = `Welcome to the dark side`;
-	}, 700)
-});
-
-searchButton.addEventListener('mouseout', ()=>{
-	let audio = new Audio();
-	audio.src = '../src/js/sounds/Close.mp4';
-	audio.play();
-	setTimeout(() => {
-	  searchButton.innerText = `Go, Jedi !`;
-	}, 700)
-});
+	  pageLoaded();
+	}, 6000);
+}

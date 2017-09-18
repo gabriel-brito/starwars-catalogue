@@ -14,13 +14,17 @@ h1{
 	text-align:center;
 	margin:30px auto;
 }
-
 h2 {
 	font-size: 3em;
 	margin:1rem auto;
 	text-align:center;
 }
 
-.catalogue-box__filter>select{
-	font-size:1em;
+@media(min-width:1268px){
+	h1{
+		font-size:5em;
+	}
+	h2{
+		font-size: 2em;
+	}
 }

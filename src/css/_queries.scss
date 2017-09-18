@@ -1,0 +1,25 @@
+@media(min-width:1268px){
+	.search-engine{
+		width:60%;
+		margin:0 auto;
+	}
+	.search-engine__input{
+		height:50px;
+		font-size:2em;
+	}
+	.search-button{
+		width:75%;
+		margin:0 12.5%;
+		height:50px;
+		font-size:2em;
+	}
+
+	.search-results{
+		width:60%;
+		margin:0 20%;
+	}
+
+	.search-result___content{
+		font-size:2em;
+	}
+}

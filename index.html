@@ -7,37 +7,21 @@
 	</head>
 	<body>
 	<header>
-		<h1>star wars</h1>
+		<h1 onclick="goToHomePage()">star wars</h1>
 	</header>
-
-	<article class="catalogue-box">
-
+	<article id="main-page" class="catalogue-box">
 		<section class="search-engine p-spacing-top-bottom-20">
-			<h2>Filter your search:</h2>
+			<h2>Looking for someone?</h2>
 			<form onkeypress="return event.keyCode != 13;" class="search-engine__form">
 				<input  id="search-input"
 						class="search-engine__input" 
 						type="text"
 						placeholder="search"
-						name="search">
+						name="search"
+				/>
 			</form>
-			<button class="search-button"
-					id="searchButton">Go, Jedi !</button>		
+			<button class="search-button" id="searchButton">Go, Jedi!</button>		
 		</section>
-
-		<section class="catalogue-box__filter p-spacing-top-bottom-20">
-			<h2>Select your filter below:</h2>
-			
-			<h2>Filter by planet:</h2>
-			<select id="search-filter" name="category"></select>
-
-			<h2>Filter by gender:</h2>
-			<select id="search-filter" name="category"></select>
-
-			<h2>Filter by birth year:</h2>
-			<select id="search-filter" name="category"></select>
-		</section>
-	
 		<section class="search-results p-spacing-top-bottom-20">
 			<h2>Characters:</h2>
 			<div id="searchResults">
@@ -47,6 +31,8 @@
 			</div>
 		</section>
 	</article>
+	<div class="loader"></div>
+	<script type="text/javascript" src="./src/js/actions.js"></script>
 	<script type="text/javascript" src="./src/js/app.js"></script>
 	</body>
 </html>

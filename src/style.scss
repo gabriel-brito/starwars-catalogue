@@ -1,9 +1,16 @@
-@import 'reset';
-@import 'helpers';
-@import 'variables';
-@import 'typography';
-@import 'background';
-@import 'main-box';
-@import 'catalogue-filter';
-@import 'catalogue-search';
-@import 'catalogue-catalogue';
+//Supports
+@import './css/reset';
+@import './css/helpers';
+@import './css/variables';
+@import './css/typography';
+@import './css/loader';
+
+//Main content
+@import './css/background';
+@import './css/main-box';
+
+//Search results components
+@import './css/catalogue-search';
+
+//Queries
+@import './css/queries';
