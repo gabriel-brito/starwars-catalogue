@@ -43,9 +43,13 @@ Up the server with:
 
 ```
 http-server
+
+Now you can access by your browser with your on location!
+
+Ex: 192.168.0.86:8080
 ```
 
-And now will appear every character of StarWars series until now!
+And now will appear every character of StarWars series until now!<br>
 Simple, not?
 
 
@@ -59,13 +63,13 @@ Simple, not?
 
 * Planet Name
 
-* And who came from the same planet!
+* And who else came from the same planet!
 
 ## Filter Usage:
 
 * If nothing is written on the search field, you're going to see all StarWars characters by pressing the search button.
 
-* Else you will filter all the data result with what have you written!
+* Else, you will filter all the data result with what have you written!
 
 
 
